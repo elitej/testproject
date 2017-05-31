@@ -1,8 +1,8 @@
-package com.test;
+package com.project;
 
-import com.test.web.AdminController;
-import com.test.web.MainController;
-import com.test.web.RegularUserController;
+import com.project.web.AdminController;
+import com.project.web.MainController;
+import com.project.web.RegularUserController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestProjectApplicationTests {
+public class ProjectApplicationTests {
 
 	@Autowired
 	private AdminController adminController;

@@ -1,7 +1,7 @@
-package com.test.service;
+package com.project.service;
 
 
-import com.test.model.User;
+import com.project.model.User;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.test.web;
+package com.project.web;
 
-import com.test.model.User;
-import com.test.service.UserService;
+import com.project.model.User;
+import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

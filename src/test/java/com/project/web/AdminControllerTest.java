@@ -1,8 +1,8 @@
-package com.test.web;
+package com.project.web;
 
-import com.test.model.Role;
-import com.test.model.User;
-import com.test.service.UserService;
+import com.project.model.Role;
+import com.project.model.User;
+import com.project.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

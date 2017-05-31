@@ -1,7 +1,7 @@
-package com.test.service;
+package com.project.service;
 
-import com.test.model.User;
-import com.test.repository.UserRepository;
+import com.project.model.User;
+import com.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

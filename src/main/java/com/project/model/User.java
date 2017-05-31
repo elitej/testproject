@@ -1,4 +1,4 @@
-package com.test.model;
+package com.project.model;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Email;

@@ -1,4 +1,4 @@
-package com.test.web.handler;
+package com.project.web.handler;
 
 
 import org.springframework.web.bind.annotation.ControllerAdvice;

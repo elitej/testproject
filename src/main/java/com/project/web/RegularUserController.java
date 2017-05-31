@@ -1,4 +1,4 @@
-package com.test.web;
+package com.project.web;
 
 
 import org.springframework.stereotype.Controller;

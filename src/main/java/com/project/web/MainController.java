@@ -1,6 +1,6 @@
-package com.test.web;
+package com.project.web;
 
-import com.test.model.User;
+import com.project.model.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Controller;
