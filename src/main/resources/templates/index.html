@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Login page</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+
+    <!-- Custom styles for this template -->
+    <link type="text/css" href="../static/css/signin.css" rel="stylesheet" th:href="@{css/signin.css}"/>
+
+</head>
+
+<body>
+<div class="container">
+    <p th:if="${param.logout}" class="alert alert-info" role="alert">You have been logged out</p>
+    <p th:if="${param.error}" class="alert alert-danger" role="alert">Incorrect email or password, please try again</p>
+
+    <form class="form-signin" th:action="@{/index}" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email"
+               required="required" autofocus="autofocus"/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password"
+               required="required"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div>
+</body>
+</html>
