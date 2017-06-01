@@ -19,12 +19,13 @@ public class UniqueViolationException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if (matches != null) {
+        if (matches != null && (matches.size() != 0)) {
+            System.out.println(matches);
             StringBuilder sb = new StringBuilder();
             for (Map.Entry<String, String> match : matches.entrySet()) {
                 sb.append(match.getKey()).append("=").append("\"").append(match.getValue()).append("\" ");
             }
-            sb.append("  are exist");
+            sb.append(" already taken");
             return sb.toString();
         }
         return super.getMessage();

@@ -12,10 +12,6 @@ public final class ExceptionUtil {
     }
 
     public static void checkUserForUniqueEmailOrLogin(User candidate, List<User> usersInDB) {
-        if (!candidate.isNew() && emailOrLoginIsNotChanged(candidate, usersInDB)) {
-            return;
-        }
-
         if (usersInDB.size() != 0) {
             Optional<User> sameEmail = usersInDB
                     .stream()
@@ -28,6 +24,10 @@ public final class ExceptionUtil {
                             && !u.getId().equals(candidate.getId()))
                     .findFirst();
 
+            if (!sameEmail.isPresent() && !sameLogin.isPresent()) {
+                return;
+            }
+
             HashMap<String, String> matches = new HashMap<>();
             sameEmail.ifPresent(user -> matches.put("email", user.getEmail()));
             sameLogin.ifPresent(user -> matches.put("login", user.getLogin()));
@@ -36,13 +36,4 @@ public final class ExceptionUtil {
         }
     }
 
-    private static boolean emailOrLoginIsNotChanged(User candidate, List<User> usersInDB) {
-        Optional<User> user = usersInDB.stream()
-                .filter(u -> u.getId().equals(candidate.getId())).findFirst();
-        if (!user.isPresent()){
-            return false;
-        }
-        return user.get().getLogin().equals(candidate.getLogin())
-                && user.get().getEmail().equals(candidate.getEmail());
-    }
 }
