@@ -18,15 +18,12 @@ public class ProjectApplicationTests {
 	private AdminController adminController;
 	@Autowired
 	private MainController mainController;
-//	@Autowired
-//	private RegularUserController regularUserController;
 
 
 	@Test
 	public void contextLoads() {
 		assertThat(adminController).isNotNull();
 		assertThat(mainController).isNotNull();
-//		assertThat(regularUserController).isNotNull();
 	}
 
 }

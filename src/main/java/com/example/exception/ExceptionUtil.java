@@ -12,7 +12,7 @@ public final class ExceptionUtil {
     }
 
     public static void checkUserForUniqueEmailOrLogin(User candidate, List<User> usersInDB) {
-        if (usersInDB.size() != 0) {
+        if (!usersInDB.isEmpty()) {
             Optional<User> sameEmail = usersInDB
                     .stream()
                     .filter(u -> u.getEmail().equals(candidate.getEmail())
