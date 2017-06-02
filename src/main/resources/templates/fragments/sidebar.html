@@ -3,14 +3,14 @@
         <ul class="nav nav-sidebar">
             <div th:if="${currentPage == 'admin'}" th:remove="tag">
                 <li class="active">
-                    <a href="#" th:href="@{/admin}">Admin <span class="sr-only">(current)</span></a></li>
-                <li><a href="#" th:href="@{/user}">User</a></li>
+                    <a th:href="@{/admin}">Admin <span class="sr-only">(current)</span></a></li>
+                <li><a th:href="@{/user}">User</a></li>
             </div>
             <div th:if="${currentPage == 'user'}" th:remove="tag">
                 <li>
-                    <a href="#" th:href="@{/admin}">Admin</a></li>
+                    <a th:href="@{/admin}">Admin</a></li>
                 <li class="active">
-                    <a href="#" th:href="@{/user}">User <span class="sr-only">(current)</span></a></li>
+                    <a th:href="@{/user}">User <span class="sr-only">(current)</span></a></li>
             </div>
         </ul>
     </div>

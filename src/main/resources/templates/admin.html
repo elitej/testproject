@@ -54,20 +54,19 @@
                                     <td th:text="${user.email}">admin@mail.ru</td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
-                                                data-target="#myModal"
                                                 th:attr="data-target='#myModal'+${user.id}">Edit
                                         </button>
-                                        <div class="modal fade" id="myModal" role="dialog"
-                                             th:attr="id='myModal'+${user.id}">
+                                        <div class="modal fade" role="dialog" th:attr="id='myModal'+${user.id}">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
-                                                    <form action="#edit" th:action="@{/admin/edit}"
-                                                          th:object="${formUser}"
+                                                    <form action="#" th:action="@{/admin/edit}" th:object="${formUser}"
                                                           method="post">
                                                         <div class="modal-header">
                                                             <button type="button" class="close"
                                                                     data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title" th:text="${'Edit user ' + user.login  + ' ' + user.password}">Edit user ...</h4>
+                                                            <h4 class="modal-title"
+                                                                th:text="${'Edit user ' + user.login  + ' ' + user.password}">
+                                                                Edit user ...</h4>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="row">
@@ -75,36 +74,35 @@
                                                                     <div class="form-group">
                                                                         <label for="id">ID</label>
                                                                         <input type="text" class="form-control" id="id"
-                                                                               readonly="readonly"
-                                                                               th:value="${user.id}" th:name="id"
-                                                                               th:id="id"/>
+                                                                               readonly="readonly" th:value="${user.id}"
+                                                                               th:name="id"/>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="email">Email</label>
                                                                         <input type="email" class="form-control"
                                                                                id="email"
-                                                                               th:value="${user.email}" th:name="email"
-                                                                               th:id="email"/>
+                                                                               th:value="${user.email}"
+                                                                               th:name="email"/>
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="login">Login</label>
                                                                         <input type="text" class="form-control"
                                                                                id="login"
-                                                                               th:value="${user.login}" th:name="login"
-                                                                               th:id="login"/>
+                                                                               th:value="${user.login}"
+                                                                               th:name="login"/>
                                                                     </div>
                                                                     <div class=" form-group">
                                                                         <label for="password">Password</label>
                                                                         <input type="text" class="form-control"
                                                                                id="password" th:value="${user.password}"
-                                                                               th:name="password" th:id="password"/>
+                                                                               th:name="password"/>
                                                                     </div>
                                                                     <div class=" form-group">
                                                                         <label for="role">Role</label>
                                                                         <input type="text" class="form-control"
                                                                                id="role"
                                                                                th:value="${user.role.name}"
-                                                                               th:name="role.name" th:id="role"/>
+                                                                               th:name="role.name"/>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -141,22 +139,22 @@
                                     <div class="form-group">
                                         <label for="add-Email" class="text-center">Email</label>
                                         <input type="email" class="form-control" id="add-Email"
-                                               placeholder="Enter email" th:field="*{email}"/>
+                                               placeholder="Enter email" th:name="email"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="add-Login">Login</label>
                                         <input type="text" class="form-control" id="add-Login"
-                                               placeholder="Login" th:field="*{login}"/>
+                                               placeholder="Login" th:name="login"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="add-Password">Password</label>
                                         <input type="text" class="form-control" id="add-Password"
-                                               placeholder="Password" th:field="*{password}"/>
+                                               placeholder="Password" th:name="password"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="add-Role">Role</label>
                                         <input type="text" class="form-control" id="add-Role"
-                                               placeholder="Role" th:field="*{role.name}"/>
+                                               placeholder="Role" th:name="role.name"/>
                                     </div>
                                     <button type="submit" class="btn btn-success">Add new user</button>
                                 </form>

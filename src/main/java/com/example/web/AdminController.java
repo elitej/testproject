@@ -31,15 +31,25 @@ public class AdminController {
         return "admin";
     }
 
-    @RequestMapping(path = {"/admin/add", "/admin/edit"}, method = RequestMethod.POST)
+    @RequestMapping(path = "/admin/add", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("formUser") @Valid User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("formUser", user);
             model.addAttribute("userList", userService.findAll());
             return "admin";
         }
 
         userService.save(user);
+        return "redirect:/admin";
+    }
+
+    @RequestMapping(path = "/admin/edit", method = RequestMethod.POST)
+    public String updateUser(@ModelAttribute("formUser") @Valid User user, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("userList", userService.findAll());
+            return "admin";
+        }
+
+        userService.update(user);
         return "redirect:/admin";
     }
 

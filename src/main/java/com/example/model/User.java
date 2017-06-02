@@ -16,11 +16,11 @@ import javax.validation.Valid;
 public class User extends BaseEntity{
 
     @NotBlank(message = "Field \"login\" can't be blank")
-    @Column(name = "user_login")
+    @Column(name = "user_login", unique = true)
     private String login;
 
     @NotBlank(message = "Field \"password\" can't be blank")
-    @Column(name = "user_password", unique = true)
+    @Column(name = "user_password")
     private String password;
 
     @Email(message = "It's not valid email address")
