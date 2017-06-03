@@ -28,6 +28,7 @@ public class AdminController {
     public String showAdminPage(Model model) {
         model.addAttribute("userList", userService.findAll());
         model.addAttribute("formUser", new User());
+
         return "admin";
     }
 
@@ -55,7 +56,10 @@ public class AdminController {
 
     @ExceptionHandler(value = UniqueViolationException.class)
     public String handleUniqueViolation(UniqueViolationException e, Model model) {
-        model.addAttribute("message", e.getMessage());
-        return "error";
+        model.addAttribute("formUser", new User());
+        model.addAttribute("userList", userService.findAll());
+        model.addAttribute("errorMessage", e.getMessage());
+
+        return "admin";
     }
 }

@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: #eee">
 <h1>Oops, an error has occured</h1>
-<h3 th:if="${message != null}" th:text="${message}"></h3>
+<h3 th:if="${errorMessage}" th:text="${errorMessage}"></h3>
 <h3><a th:href="@{/}">Home page</a></h3>
 </body>
 </html>

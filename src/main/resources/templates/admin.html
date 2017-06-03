@@ -15,6 +15,9 @@
         <div th:include="fragments/sidebar :: nav-sidebar(${'admin'})" th:remove="tag"></div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <h1 class="page-header">Admin panel</h1>
+            <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+                <p th:text="${errorMessage}"></p>
+            </div>
             <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('formUser.*')}">
                 <h4>An error(s) occurred while adding or editing the user.</h4>
                 <ul>

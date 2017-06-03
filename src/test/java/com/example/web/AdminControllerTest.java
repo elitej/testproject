@@ -112,6 +112,6 @@ public class AdminControllerTest {
                         .param("password", "pas")
                         .param("role.name", "ADMIN"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("error"));
+                .andExpect(view().name("admin"));
     }
 }
