@@ -24,7 +24,7 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @RequestMapping(path = "/admin")
+    @RequestMapping(path = "/admin", method = RequestMethod.GET)
     public String showAdminPage(Model model) {
         model.addAttribute("userList", userService.findAll());
         model.addAttribute("formUser", new User());

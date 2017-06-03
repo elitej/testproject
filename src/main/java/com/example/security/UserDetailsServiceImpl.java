@@ -1,4 +1,4 @@
-package com.example.service;
+package com.example.security;
 
 import com.example.model.User;
 import com.example.repository.UserRepository;

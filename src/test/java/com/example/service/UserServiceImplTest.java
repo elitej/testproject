@@ -125,6 +125,5 @@ public class UserServiceImplTest {
                 .role(roleAdmin)
                 .build();
         userService.save(user2);
-
     }
 }
